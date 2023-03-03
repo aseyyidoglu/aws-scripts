@@ -1,16 +1,18 @@
 #!/bin/sh
+"""
+Install AWS CLI environment.
+Before starting, setup an IAM identity and note your:
+- AWS Access Key ID
+- AWS Access Secret
+"""
 
 echo "Starting..."
 echo AWS Access Key ID:
-read $access_key
+read ACCESS_KEY
 echo AWS Access Key Secret:
-read $access_secret
+read ACCESS_SECRET
 echo Default Region Name:
-read $default_region
-
-ACCESS_KEY=$access_key
-ACCESS_SECRET=$access_secret
-DEFAULT_REGION=$default_region
+read DEFAULT_REGION
 
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 unzip awscliv2.zip
