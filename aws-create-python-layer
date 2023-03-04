@@ -1,7 +1,6 @@
 """
 Creates a deployable AWS python package in a ZIP archive
 """
-echo "Starting..."
 echo Layer name:
 read LAYER_NAME
 echo Package names:
