@@ -9,7 +9,8 @@ To get started:
 
 ## Content
 
-- aws-create-*: Create AWS layer packages to quickly deploy AWS Lambda functions
-- aws-setup: Setup AWS CLI in local machine or VPC
+- git-commands: Reference file for commonly used git commands
 - git-connect: Setup SSH keys on local environment and GitHub
 - git-setup: Fetch and merge a github repository
+- aws-create-*: Create AWS layer packages to quickly deploy AWS Lambda functions
+- aws-setup: Setup AWS CLI in local machine or VPC
