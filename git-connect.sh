@@ -1,14 +1,17 @@
 # !/bin/sh
 
+echo Enter your email:
+read $EMAIL
+
 # Create SSH key
-ssh-keygen -t ed25519 -C "YOUR_EMAIL"
+ssh-keygen -t ed25519 -C $EMAIL
 
 # View SSH directory
 ls -al ~/.ssh
 
 # Configure SSH
-open ~/.ssh/config
 touch ~/.ssh/config
+open ~/.ssh/config
 cat > ~/.ssh/config << EOF
 Host github.com
   AddKeysToAgent yes
