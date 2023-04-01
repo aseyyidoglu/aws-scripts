@@ -1,4 +1,4 @@
-# !/bin/sh
+#!/bin/sh
 
 echo Enter your email:
 read $EMAIL
