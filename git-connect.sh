@@ -1,5 +1,4 @@
-#!/bin/sh
-
+# !/bin/sh
 # This script helps you to configure SSH access on a single machine.
 # Following command helps you to check whether you already have a configuration in place or not: ssh -T git@github.com
 
