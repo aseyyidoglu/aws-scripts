@@ -16,8 +16,8 @@ touch ~/.ssh/config
 open ~/.ssh/config
 cat > ~/.ssh/config << EOF
 Host github.com
-  AddKeysToAgent yes
-  IdentityFile ~/.ssh/id_ed25519
+AddKeysToAgent yes
+IdentityFile ~/.ssh/id_ed25519
 EOF
 
 # Test GitHub SSH Access
