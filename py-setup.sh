@@ -1,4 +1,9 @@
 # !/bin/sh
+# This script starts a new python project on your local machine.
+# You need to:
+# - provide a project name
+# - provide list of libraries to install as a space-separated string: e.g. "requests numpy matplotlib"
+# - have python3, pip and venv globally installed
 
 # Get project name and module list from user
 echo Enter project name:
