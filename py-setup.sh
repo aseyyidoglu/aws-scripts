@@ -10,18 +10,18 @@ read MODULE_STRING
 mkdir $PROJECT
 cd $PROJECT
 
-# Install virtual environment
+# Setup virtual environment
 python3 -m venv env
 source env/bin/activate
 
-# Install modules into virtual environment
+# Install modules into virtual environment: env folder
 pip3 install $MODULE_STRING
 pip freeze > requirements.txt
 
-# Create an entrypoint application file: app.py
+# Create application file: app.py
 touch app.py
 
-# Import modules
+# Write import lines in app.py
 IFS=' '
 read -ra MODULE_ARRAY <<< "$MODULE_STRING"
  
@@ -35,6 +35,6 @@ echo '
 
 print("Application is ready")' >> app.py
 
-# Completion
+# Complete script operations
 open app.py
 echo "Project is ready. Application file: app.py"
