@@ -14,3 +14,4 @@ To get started:
 - git-setup: Fetch and merge a github repository
 - aws-create-*: Create AWS layer packages to quickly deploy AWS Lambda functions
 - aws-setup: Setup AWS CLI in local machine or VPC
+- py-setuo: Setup a python project with virtual environment and libraries installed on a local machine
