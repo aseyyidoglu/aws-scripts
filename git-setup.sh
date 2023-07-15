@@ -1,5 +1,6 @@
 # !/bin/sh
-# This script allows you to create a local copy of a git remote repository
+# Create a local copy of a git remote repository
+# Directly copy and paste URL of a repository
 
 # Get GitHub repository URL
 echo Enter GitHub repository URL:
