@@ -1,6 +1,8 @@
 # !/bin/sh
-# This script helps you to configure SSH access on a single machine.
-# Following command helps you to check whether you already have a configuration in place or not: ssh -T git@github.com
+# Configure SSH access to github on a single device
+
+# Run command to test if you already configured git access or not:
+# ssh -T git@github.com
 
 echo Enter your email:
 read $EMAIL
