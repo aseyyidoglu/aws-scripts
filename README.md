@@ -2,10 +2,10 @@
 
 Simple scripts to make computing and programming faster both on local and in cloud services.
 
-To get started:
-- Download the script file you need
-- Move it to directory you want to work on
-- Run the script
+Get started:
+1. Download the script file
+2. Move it to your work directory
+3. Run command on terminal to run the script: bash script-name.ssh 
 
 ## Content
 
