@@ -8,7 +8,7 @@
 # Get project name and module list from user
 echo Enter project name:
 read PROJECT
-echo Enter list of python libraries to install (space separated):
+echo Enter list of python libraries to install 'space separated':
 read MODULE_STRING
 
 # Setup project directory
