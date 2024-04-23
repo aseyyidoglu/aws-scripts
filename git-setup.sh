@@ -1,19 +1,15 @@
 # !/bin/sh
-# Create a local copy of a git remote repository
-# Directly copy and paste URL of a repository
+# Open terminal and run below codes line by line
 
-# Get GitHub repository URL
-echo Enter GitHub repository URL:
-read REPO_URL
-ACCOUNT_NAME=$(basename $(dirname $REPO_URL))
-REPOSITORY_NAME=$(basename $REPO_URL)
+# Create a new keygen with an email
+ssh-keygen -t rsa -C ali.seyyidoglu@gmail.com 
+# then press ENTER, add passphrase
 
-# Create a copy of current repository in remote's main branch
-mkdir $REPOSITORY_NAME
-cd $REPOSITORY_NAME
-git init
-git remote add origin git@github.com:$ACCOUNT_NAME/$REPOSITORY_NAME.git
-git fetch origin main
-git merge origin/main
+# Evaluate and add ssh key into id_rsa file, and open the public key file to copy for remote repo
+eval "$(ssh-agent -s)" && ssh-add ~/.ssh/id_rsa && open ~/.ssh/id_rsa.pub
 
-echo "Repository is ready."
+# Test connection over port 443
+ssh -T -p 443 git@ssh.github.com
+
+# In a project folder, initiate git and copy a remote repo
+git init && git remote add origin git@github.com:aseyyidoglu/atomicro.git && git fetch origin main && git merge origin/main
