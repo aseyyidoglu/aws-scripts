@@ -28,16 +28,22 @@ else
   touch analysis.ipynb
   touch app.py
 
+  echo ">>> Writing README content into README.md file..."
   echo 'This script is developed as an open source software for the community. You are welcome to use, modify and distribute it freely.
 
 Author: Ali Osman Seyyidoglu  
 Version: 1.0.0  
 Last modified: 2025-02-19
 
-# Instructions
+# Frequently Used Commands
 
-- Activate virtual environment: source venv/bin/activate  
-- Save sensitive key-value pairs such as credentials at .env folder  
+- source venv/bin/activate  
+- deactivate  
+- pip list  
+- pip install --upgrade pip  
+- python3 -m venv venv  
+- pip freeze > requirements.txt  
+- pip install requirements.txt  
 ' >> README.md
   
   echo ">>> Installing python-dotenv via pip package manager..."
