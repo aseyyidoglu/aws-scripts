@@ -1,45 +1,52 @@
 # !/bin/sh
-# This script starts a new python project on your local machine.
-# You need to:
-# - provide a project name
-# - provide list of libraries to install as a space-separated string: e.g. "requests numpy matplotlib"
-# - have python3, pip and venv globally installed
+echo "This shell script creates a bootstrapped Python project work directory on your desktop."
+echo "What is the name of the Python project?:"
+read PROJECT_PATH
 
-# Get project name and module list from user
-echo Enter project name:
-read PROJECT
-echo Enter list of python libraries to install 'space separated':
-read MODULE_STRING
+DIRECTORY="$HOME/Desktop/$PROJECT_PATH"
 
-# Setup project directory
-mkdir $PROJECT
-cd $PROJECT
+echo ">>> Setting up a new Python project at: $DIRECTORY"
 
-# Setup virtual environment
-python3 -m venv env
-source env/bin/activate
+if [ -d "$DIRECTORY" ]; then
+  echo "Directory already exists: $DIRECTORY"
+  echo "Try another project name..."
+else
+  sleep 2
 
-# Install modules into virtual environment: env folder
-pip3 install $MODULE_STRING
-pip freeze > requirements.txt
+  echo ">>> Creating project folder at: $DIRECTORY"
+  mkdir "$DIRECTORY"
+  cd "$DIRECTORY"
+  
+  echo ">>> Creating virtual environment. Folder name: venv"
+  python3 -m venv venv
+  
+  echo ">>> Activating virtual environment... Command: source venv/bin/activate"
+  source venv/bin/activate
+  
+  echo ">>> Creating project files: README.md, analysis.ipnb, app.py"
+  touch README.md
+  touch analysis.ipynb
+  touch app.py
 
-# Create application file: app.py
-touch app.py
+  echo 'This script is developed as an open source software for the community. You are welcome to use, modify and distribute it freely.
 
-# Write import lines in app.py
-IFS=' '
-read -ra MODULE_ARRAY <<< "$MODULE_STRING"
- 
-for value in "${MODULE_ARRAY[@]}";
-do
-  echo -e "import $value" >> app.py
-done
+Author: Ali Osman Seyyidoglu  
+Version: 1.0.0  
+Last modified: 2025-02-19
 
-echo '
-# write your code here
+# Instructions
 
-print("Application is ready")' >> app.py
+- Activate virtual environment: source venv/bin/activate  
+- Save sensitive key-value pairs such as credentials at .env folder  
+' >> README.md
+  
+  echo ">>> Installing python-dotenv via pip package manager..."
+  pip install python-dotenv || true
 
-# Complete script operations
-open app.py
-echo "Project is ready. Application file: app.py"
+  echo ">>> Creating dot-env file. Use this file to store sensitive key-value pairs such as credentials."
+  echo "Learn more about dot-env at: https://pypi.org/project/python-dotenv/#getting-started"
+  touch .env
+  echo ">>> Workplace is ready in: $DIRECTORY"
+  echo ">>> Before starting, activate virtual environment by using: source env/bin/activate"
+  echo ">>> Setup completed."
+fi
