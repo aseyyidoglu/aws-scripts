@@ -1,13 +1,16 @@
-# Scripts
+# Shell Scripts
 
-Simple scripts to make computing and programming faster both on local and in cloud services.
+Simple scripts to make computing and programming faster both on local machine and in cloud services.
 
-Get started:
+To get started:
 1. Download the script file
 2. Move it to your work directory
-3. Run command on terminal to run the script: bash script-name.ssh 
+3. Run command on terminal to run the script: 
+'''bash 
+bash SCRIPTNAME.ssh
+'''
 
-## Content
+## Overview
 
 - git-commands: Reference file for commonly used git commands
 - git-connect: Setup SSH keys on local environment and GitHub
