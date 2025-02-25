@@ -13,4 +13,4 @@ eval "$(ssh-agent -s)" && ssh-add ~/.ssh/id_rsa && open ~/.ssh/id_rsa.pub
 ssh -T -p 443 git@ssh.github.com
 
 # In a project folder, initiate git and copy a remote repo
-git init && git remote add origin git@github.com:aseyyidoglu/atomicro.git && git fetch origin main && git merge origin/main
+git init && git remote add origin git@github.com:username/repository.git && git clone git@github.com:username/repository.git
